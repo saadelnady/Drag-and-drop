@@ -1,0 +1,88 @@
+@import "_mainstyle";
+%centerElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+%borderRadius {
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+%trransition {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+body {
+  background-color: $blue-color;
+  @extend %centerElement;
+  height: 100vh;
+
+  h1 {
+    text-align: center;
+  }
+  .inputs {
+    @extend %centerElement;
+    @extend %borderRadius;
+    background-color: $white-color;
+    padding: 15px;
+    width: 500px;
+    max-width: 100%;
+
+    .inputsContent {
+      @extend %centerElement;
+      width: 100%;
+      #inp {
+        border: 1px solid $blue-color;
+        text-align: center;
+      }
+      #inp,
+      #btn {
+        font-size: 20px;
+        width: 100%;
+        outline: none;
+        padding: 10px;
+        @extend %borderRadius;
+      }
+      #btn {
+        color: $white-color;
+        @extend %trransition;
+        border: none;
+        cursor: pointer;
+        background-color: $blue-color;
+        &:hover {
+          background-color: $blue-color2;
+        }
+      }
+    }
+  }
+  .outputs {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    .box {
+      @extend %borderRadius;
+      width: 200px;
+      background-color: $white-color;
+      padding: 10px;
+      .item {
+        @extend %borderRadius;
+        cursor: move;
+        margin-bottom: 5px;
+        padding: 10px;
+        color: $white-color;
+        background-color: $blue-color;
+      }
+    }
+  }
+}
